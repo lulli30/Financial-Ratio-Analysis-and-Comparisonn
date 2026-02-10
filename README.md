@@ -1,119 +1,104 @@
-Taiwan Bankruptcy Financial Ratio Analysis
+# Taiwan Bankruptcy Financial Ratio Analysis
 
-A Python-based exploratory data analysis (EDA) project comparing bankrupt and non-bankrupt companies using key financial ratios from the Taiwan Bankruptcy Prediction dataset.
+A Python-based exploratory data analysis (EDA) project comparing bankrupt and non-bankrupt companies using key financial ratios from the Taiwan Bankruptcy Prediction dataset. This project focuses on identifying financial patterns associated with corporate failure through descriptive statistics and visual analysis.
 
-This project focuses on identifying financial patterns associated with corporate failure through descriptive statistics and visual analysis.
+## Overview
 
-Overview
+The objective of this project is to analyze and compare financial health indicators between bankrupt and healthy firms. It provides insights that can support bankruptcy prediction, financial risk assessment, and feature selection for machine learning models.
 
-The objective of this project is to analyze and compare financial health indicators between bankrupt and healthy firms.
-It provides insights that can support bankruptcy prediction, financial risk assessment, and feature selection for machine learning models.
+## Dataset
 
-Dataset
+- **Dataset**: Taiwan Bankruptcy Prediction
+- **Target Column**: `Bankrupt?`
+  - `0` → Non-Bankrupt
+  - `1` → Bankrupt
+- **Features**: Financial ratios derived from corporate financial statements
 
-Dataset: Taiwan Bankruptcy Prediction
+> **Note**: Financial ratios may contain extreme values and skewed distributions.
 
-Target Column: Bankrupt?
+## Financial Ratios Analyzed
 
-0 → Non-Bankrupt
+The following key financial ratios are examined:
 
-1 → Bankrupt
-
-Features: Financial ratios derived from corporate financial statements
-
-Note: Financial ratios may contain extreme values and skewed distributions.
-
-Financial Ratios Analyzed
-
-ROA (C) before interest and depreciation
-
-Net Income to Total Assets
-
-Liability to Equity
-
-Interest Coverage Ratio (Interest expense to EBIT)
+- **ROA (C) before interest and depreciation** - Profitability measure
+- **Net Income to Total Assets** - Overall profitability indicator
+- **Liability to Equity** - Leverage ratio
+- **Interest Coverage Ratio** (Interest expense to EBIT) - Debt-servicing ability
 
 These ratios capture profitability, leverage, and debt-servicing ability, which are critical indicators of financial distress.
 
-Tech Stack
+## Tech Stack
 
-Python 3
+- Python 3
+- pandas
+- numpy
+- matplotlib
 
-pandas
+**Recommended environment**: Google Colab or Jupyter Notebook
 
-numpy
+## Analysis Steps
 
-matplotlib
+1. Load and clean the dataset
+2. Inspect data structure and missing values
+3. Split data into bankrupt and non-bankrupt groups
+4. Compute group-wise averages and percentage differences
+5. Visualize distributions using boxplots
+6. Compare mean values using bar charts
+7. Generate summary statistics
 
-Recommended environment: Google Colab or Jupyter Notebook.
+## Visualizations
 
-Analysis Steps
+The analysis includes:
 
-Load and clean the dataset
+- Boxplots comparing financial ratio distributions
+- Bar charts showing average ratio differences
+- Tabular summaries of means and standard deviations
 
-Inspect data structure and missing values
+## Key Findings
 
-Split data into bankrupt and non-bankrupt groups
+- Bankrupt firms show **significantly lower profitability**
+- Leverage ratios are **notably higher** among bankrupt companies
+- Interest coverage is **substantially weaker** for bankrupt firms
+- Overlapping distributions indicate the need for multivariate or machine-learning-based models
 
-Compute group-wise averages and percentage differences
+## How to Run
 
-Visualize distributions using boxplots
+### Installation
 
-Compare mean values using bar charts
-
-Generate summary statistics
-
-Visualizations
-
-Boxplots comparing financial ratio distributions
-
-Bar charts showing average ratio differences
-
-Tabular summaries of means and standard deviations
-
-Key Findings
-
-Bankrupt firms show significantly lower profitability.
-
-Leverage ratios are notably higher among bankrupt companies.
-
-Interest coverage is substantially weaker for bankrupt firms.
-
-Overlapping distributions indicate the need for multivariate or machine-learning-based models.
-
-Future Improvements
-
-Statistical significance testing (t-test, Mann–Whitney U)
-
-Effect size calculation (Cohen’s d)
-
-Outlier treatment (winsorization)
-
-Machine learning models for bankruptcy prediction
-
-Comparison with classical models (e.g., Altman Z-Score)
-
-How to Run
+```bash
 pip install pandas numpy matplotlib
+```
 
+### Execution
 
-Update the dataset path if needed:
+1. Clone or download this repository
+2. Update the dataset path if needed:
 
+```python
 df = pd.read_csv("path/to/taiwan_bankruptcy.csv")
+```
 
+3. Run all cells to reproduce the analysis and visualizations
 
-Run all cells to reproduce the analysis and visualizations.
+## Use Cases
 
-Use Cases
+- Academic research and thesis work
+- Financial risk analysis
+- Feature exploration for machine learning models
+- Educational demonstrations
 
-Academic research and thesis work
+## Future Improvements
 
-Financial risk analysis
+- [ ] Statistical significance testing (t-test, Mann–Whitney U)
+- [ ] Effect size calculation (Cohen's d)
+- [ ] Outlier treatment (winsorization)
+- [ ] Machine learning models for bankruptcy prediction
+- [ ] Comparison with classical models (e.g., Altman Z-Score)
 
-Feature exploration for machine learning models
-
-Educational demonstrations
-
-License
+## License
 
 This project is for educational and research purposes.
+
+---
+
+**Contributions and feedback are welcome!**
